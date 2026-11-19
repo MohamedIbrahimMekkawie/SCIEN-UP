@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>SCIENCE.SA | منصة العلوم – المسار الأمريكي</title>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#050b18;--nav:#0e1a36;--card:#1c1540;--chip:#1b2a4a;--g1:#d4a93c;--g2:#8c6a1c;--mut:#bdb8da;--glow:rgba(150,80,255,.5);color-scheme:dark;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-padding-top:env(safe-area-inset-top,0px);background:var(--bg)}
+*,*::before,*::after{box-sizing:inherit}
+body{margin:0;background:var(--bg);color:#fff;font-family:'Cairo','Segoe UI',Tahoma,Arial,sans-serif;line-height:1.6}
+header{background:var(--nav);display:flex;align-items:center;justify-content:space-between;padding:18px 6vw;gap:12px;flex-wrap:wrap}
+.logo{font-size:26px;font-weight:800;letter-spacing:.5px}
+nav{display:flex;gap:26px;font-weight:600}
+nav a{color:#fff;text-decoration:none;opacity:.9}
+.pts{background:linear-gradient(135deg,var(--g1),var(--g2));padding:4px 16px;border-radius:20px;font-weight:700;font-size:15px}
+.hero{text-align:center;padding:48px 6vw 20px}
+.hero h1{font-size:clamp(28px,5vw,44px);margin:0 0 10px;font-weight:800}
+.hero p{max-width:760px;margin:0 auto;color:var(--mut);font-size:18px}
+.filters{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;padding:22px 6vw 6px}
+.filters.sm{padding-top:8px;padding-bottom:26px}
+.f{font-family:inherit;font-size:17px;color:#fff;background:#14264a;border:1px solid #1f3a6a;border-radius:10px;padding:12px 26px;cursor:pointer;transition:.2s}
+.f:hover{border-color:var(--g1)}
+.f.on{background:linear-gradient(135deg,var(--g1),#6d4aa8);border-color:transparent;font-weight:700}
+.sm .f{font-size:15px;padding:8px 20px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:30px;padding:10px 6vw 70px;max-width:1300px;margin:auto}
+.card{background:var(--card);border-radius:20px;overflow:hidden;box-shadow:0 0 0 1px rgba(150,80,255,.35),0 0 26px -6px var(--glow);display:flex;flex-direction:column}
+.art{height:190px;display:grid;place-items:center;font-size:84px;position:relative}
+.badge{position:absolute;top:12px;inset-inline-start:12px;background:rgba(5,11,24,.75);border:1px solid var(--g1);color:var(--g1);font-size:13px;font-weight:700;padding:2px 12px;border-radius:8px}
+.info{background:#241a52;border-radius:70px 14px 0 0;margin-top:-34px;padding:22px 20px 20px;position:relative;flex:1;display:flex;flex-direction:column}
+.info h3{margin:0;font-size:21px;font-weight:700}
+.info .en{color:var(--g1);font-size:13px;direction:ltr;text-align:right;font-weight:600}
+.info p{color:var(--mut);font-size:15px;margin:8px 0 14px;flex:1}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px}
+.chip{background:var(--chip);border-radius:8px;padding:5px 12px;font-size:13px;flex:1;text-align:center;white-space:nowrap}
+.bar{border:1px solid rgba(150,80,255,.55);border-radius:12px;padding:8px;display:flex;align-items:center;justify-content:space-between;gap:10px;font-weight:700}
+.bar span{padding-inline:10px;color:var(--mut)}
+.btn{font-family:inherit;font-size:15px;font-weight:700;color:#fff;border:0;border-radius:8px;padding:9px 20px;cursor:pointer;background:linear-gradient(135deg,var(--g1),var(--g2))}
+.btn:hover{filter:brightness(1.12)}
+.btn.alt{background:#14264a;border:1px solid #1f3a6a}
+footer{background:#0b1226;text-align:center;padding:50px 6vw 40px}
+.fl{display:inline-block;border:1px solid #232c45;background:#111a30;border-radius:12px;padding:22px 60px;font-size:34px;font-weight:800;color:var(--g1)}
+footer .lk{margin-top:26px;display:flex;gap:26px;justify-content:center;flex-wrap:wrap;color:var(--mut)}
+.ov{position:fixed;inset:0;background:rgba(2,5,12,.82);display:none;align-items:center;justify-content:center;padding:max(16px,env(safe-area-inset-top)) 16px max(16px,env(safe-area-inset-bottom));z-index:50}
+.ov.show{display:flex}
+.modal{background:var(--card);border-radius:20px;max-width:640px;width:100%;max-height:100%;overflow:auto;padding:26px;box-shadow:0 0 0 1px rgba(150,80,255,.5),0 0 40px -6px var(--glow)}
+.modal h2{margin:0 0 4px;font-size:25px}
+.modal h4{color:var(--g1);margin:18px 0 6px;font-size:17px}
+.modal ul,.modal ol{margin:0;padding-inline-start:22px;color:#e6e3f5}
+.modal li{margin-bottom:4px}
+.box{background:var(--chip);border-radius:12px;padding:12px 16px;color:#e6e3f5;margin-top:6px}
+.x{float:left;background:#14264a;border:1px solid #1f3a6a;color:#fff;border-radius:8px;width:36px;height:36px;font-size:20px;cursor:pointer}
+.opt{display:block;width:100%;text-align:right;font-family:inherit;font-size:16px;color:#fff;background:var(--chip);border:1px solid #27427a;border-radius:10px;padding:11px 16px;margin-top:10px;cursor:pointer}
+.opt:hover{border-color:var(--g1)}
+.opt.ok{background:#14532d;border-color:#22c55e}
+.opt.no{background:#5b1a1a;border-color:#ef4444}
+.mem{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:14px}
+.mc{aspect-ratio:1;border-radius:12px;border:1px solid #27427a;background:#14264a;color:#fff;font-family:inherit;font-size:15px;font-weight:700;cursor:pointer;display:grid;place-items:center;padding:4px}
+.mc.up{background:#2a1f66;border-color:var(--g1)}
+.mc.done{background:#14532d;border-color:#22c55e;cursor:default}
+.mc .e{font-size:34px}
+.big{font-size:90px;text-align:center;margin:10px 0}
+.row3{display:flex;gap:10px}.row3 .opt{text-align:center}
+.prog{color:var(--mut);font-size:14px}
+@media(max-width:640px){nav{display:none}.fl{padding:18px 30px}}
+</style>
+</head>
+<body>
+<header>
+  <div class="logo">SCIENCE.SA</div>
+  <nav><a href="#top">الرئيسية</a><a href="#lib">التجارب والألعاب</a><a href="#about">من نحن</a></nav>
+  <div class="pts">⭐ نقاطك: <span id="pts">0</span></div>
+</header>
+
+<section class="hero" id="top">
+  <h1>منصة العلوم – المسار الأمريكي</h1>
+  <p>تجارب علمية آمنة وألعاب تعليمية ممتعة، مصممة وفق معايير NGSS للصفين الخامس والسادس.</p>
+</section>
+
+<div class="filters" id="lib">
+  <button class="f on" data-t="all">جميع المحتوى</button>
+  <button class="f" data-t="exp">تجارب علمية</button>
+  <button class="f" data-t="game">ألعاب تعليمية</button>
+</div>
+<div class="filters sm">
+  <button class="f on" data-g="all">كل الصفوف</button>
+  <button class="f" data-g="5">الصف الخامس</button>
+  <button class="f" data-g="6">الصف السادس</button>
+</div>
+
+<main class="grid" id="grid"></main>
+
+<footer id="about">
+  <div class="fl">SCIENCE.SA</div>
+  <div class="lk"><span>من نحن</span><span>|</span><span>اتصل بنا</span><span>|</span><span>الخصوصية</span><span>|</span><span>الأسئلة الشائعة</span></div>
+</footer>
+
+<div class="ov" id="ov"><div class="modal" id="md"></div></div>
+
+<script>
+var pts=0, T='all', G='all';
+var EXP=[
+{i:'🌋',c:'linear-gradient(135deg,#3b1d6e,#b4452b)',t:'البركان الكيميائي',e:'Chemical Reaction Volcano',g:'5',std:'5-PS1-4',time:'20 د',d:'اكتشف ماذا يحدث عند خلط مادتين وكيف تنتج مادة جديدة.',
+ m:['بيكنج صودا (3 ملاعق)','خل (½ كوب)','صابون أطباق (قطرات)','ملوّن طعام أحمر','كوب أو زجاجة صغيرة وصينية'],
+ s:['ضع الكوب على الصينية وأضف بيكنج صودا وقطرات صابون وملوّن.','توقّع ماذا سيحدث واكتب توقعك.','صبّ الخل بسرعة وراقب.','سجّل ملاحظاتك: فقاعات، حرارة، صوت.'],
+ w:'خلط الخل مع بيكنج صودا ينتج غاز ثاني أكسيد الكربون (مادة جديدة)، وهذا دليل على حدوث تفاعل كيميائي.'},
+{i:'⚖️',c:'linear-gradient(135deg,#123b6b,#2a8aa8)',t:'هل تختفي المادة عند الذوبان؟',e:'Conservation of Matter',g:'5',std:'5-PS1-2',time:'25 د',d:'قِس الكتلة قبل الذوبان وبعده لتثبت أن المادة لا تفنى.',
+ m:['ميزان مطبخ','ملح أو سكر','كوب ماء وملعقة','وعاء مغلق (اختياري)'],
+ s:['قِس كتلة كوب الماء وكتلة الملح كلًا على حدة وسجّلها.','اجمع الكتلتين وتوقّع كتلة المحلول.','اخلط حتى يذوب الملح تمامًا.','قِس كتلة المحلول وقارنها بتوقعك.'],
+ w:'كتلة المحلول تساوي مجموع كتل مكوناته؛ فالملح لم يختفِ بل توزّع في الماء، فالكتلة محفوظة.'},
+{i:'🌱',c:'linear-gradient(135deg,#0f4a3a,#6bbf3d)',t:'ماذا تحتاج النبتة لتنمو؟',e:'What Plants Need',g:'5',std:'5-LS1-1',time:'10 د يوميًا × أسبوعين',d:'قارن نمو نباتات تحت ظروف مختلفة من الضوء والماء.',
+ m:['4 أكواب مع تربة وبذور فول','ماء','خزانة مظلمة ونافذة مشمسة','مسطرة وورقة تسجيل'],
+ s:['ازرع البذور في الأكواب الأربعة.','اجعل كوبًا بضوء وماء، وكوبًا بضوء بلا ماء، وكوبًا بلا ضوء مع ماء، وكوبًا ضابطًا.','قِس الارتفاع كل يوم وسجّله في جدول.','ارسم رسمًا بيانيًا لمقارنة النتائج.'],
+ w:'تحصل النباتات على موادها الأساسية للنمو من الهواء والماء، وتستخدم طاقة الضوء في صنع غذائها.'},
+{i:'🌗',c:'linear-gradient(135deg,#2a2466,#e1a53a)',t:'تتبّع الظل على مدار اليوم',e:'Shadow Tracking',g:'5',std:'5-ESS1-2',time:'ساعة (موزعة)',d:'راقب طول الظل واتجاهه واكتشف نمط حركة الشمس الظاهرية.',
+ m:['عصا مثبتة في الأرض','طباشير','مسطرة أو شريط قياس','ساعة وورقة تسجيل'],
+ s:['ثبّت العصا في مكان مشمس.','علّم نهاية الظل بالطباشير كل ساعة وسجّل الوقت.','قِس طول الظل في كل مرة.','مثّل البيانات برسم بياني للطول مقابل الوقت.'],
+ w:'يتغير طول الظل واتجاهه خلال اليوم بسبب دوران الأرض حول نفسها، وهو أقصر ما يكون وقت الظهيرة.'},
+{i:'🧪',c:'linear-gradient(135deg,#3a1b66,#d44a8c)',t:'برج الكثافة الملوّن',e:'Density Tower',g:'6',std:'PS1.A',time:'30 د',d:'ادمج سوائل مختلفة الكثافة لترى كيف تتراكب في طبقات.',
+ m:['عسل، صابون سائل، ماء، زيت','ملوّنات طعام','كوب شفاف طويل','ملعقة'],
+ s:['صبّ العسل أولًا في قاع الكوب ببطء.','أضف الصابون ثم الماء الملوّن ثم الزيت، كل طبقة على جدار الكوب.','اترك البرج دون تحريك وراقب الترتيب.','جرّب إسقاط أجسام صغيرة (عنب، فلين) وتوقّع أين تستقر.'],
+ w:'الكثافة = الكتلة ÷ الحجم؛ السوائل الأعلى كثافة تهبط للأسفل والأقل كثافة تطفو للأعلى.'},
+{i:'🔥',c:'linear-gradient(135deg,#6e1d2b,#2a6fd4)',t:'انتقال الحرارة: ساخن مقابل بارد',e:'Heat Transfer',g:'6',std:'MS-PS3-4',time:'30 د',d:'خطّط لتحقيق يقيس كيف تنتقل الطاقة الحرارية بين المواد.',
+ m:['ماء ساخن (من شخص بالغ) وماء بارد','كوبان مختلفان: معدن وبلاستيك','ميزان حرارة','ساعة توقيت'],
+ s:['صبّ الكمية نفسها من الماء الساخن في كل كوب.','قِس درجة الحرارة كل دقيقة لمدة 10 دقائق.','سجّل القياسات وارسم منحنى التبريد لكل كوب.','قارن بين الكوبين وفسّر الفرق.'],
+ w:'تنتقل الطاقة الحرارية من الجسم الأسخن إلى الأبرد، ويختلف المعدل حسب نوع المادة والكتلة.'}
+];
+var GAMES=[
+{i:'🧠',c:'linear-gradient(135deg,#1d3a6e,#8a4be0)',t:'تحدّي العلوم',e:'Science Quiz',g:'all',time:'5 د',d:'أسئلة سريعة في المادة والطاقة والنبات والأرض.',k:'quiz'},
+{i:'🃏',c:'linear-gradient(135deg,#0f4a5e,#3dbfa0)',t:'لعبة الذاكرة العلمية',e:'Memory Match',g:'all',time:'3 د',d:'طابق الرمز مع المصطلح العلمي الصحيح بأقل محاولات.',k:'mem'},
+{i:'🧊',c:'linear-gradient(135deg,#1d2b6e,#4bb8e0)',t:'صنّف حالات المادة',e:'States of Matter Sort',g:'all',time:'3 د',d:'هل هذه المادة صلبة أم سائلة أم غازية؟ اختر بسرعة!',k:'sort'}
+];
+var $=function(s){return document.querySelector(s)};
+function addPts(n){pts+=n;$('#pts').textContent=pts}
+function render(){
+  var h='';
+  EXP.forEach(function(x,n){
+    if((T==='all'||T==='exp')&&(G==='all'||x.g===G)) h+=card(x,'exp',n);
+  });
+  GAMES.forEach(function(x,n){
+    if(T==='all'||T==='game') h+=card(x,'game',n);
+  });
+  $('#grid').innerHTML=h||'<p style="grid-column:1/-1;text-align:center;color:var(--mut)">لا يوجد محتوى لهذا الاختيار.</p>';
+}
+function card(x,k,n){
+  var isE=k==='exp';
+  return '<article class="card"><div class="art" style="background:'+x.c+'">'+x.i+'<span class="badge">'+(isE?'تجربة':'لعبة')+'</span></div>'+
+  '<div class="info"><h3>'+x.t+'</h3><div class="en">'+x.e+'</div><p>'+x.d+'</p>'+
+  '<div class="chips"><span class="chip">'+(x.g==='all'?'الصف 5 و 6':'الصف '+(x.g==='5'?'الخامس':'السادس'))+'</span><span class="chip">'+x.time+'</span>'+(isE?'<span class="chip" dir="ltr">'+x.std+'</span>':'<span class="chip">تفاعلية</span>')+'</div>'+
+  '<div class="bar"><button class="btn" onclick="'+(isE?'openExp('+n+')':'openGame('+n+')')+'">'+(isE?'التفاصيل ←':'العب الآن ←')+'</button><span>'+(isE?'+10 نقاط':'حتى +50 نقطة')+'</span></div></div></article>';
+}
+function show(h){$('#md').innerHTML='<button class="x" onclick="closeM()" aria-label="إغلاق">×</button>'+h;$('#ov').classList.add('show')}
+function closeM(){$('#ov').classList.remove('show');$('#md').innerHTML=''}
+$('#ov').addEventListener('click',function(e){if(e.target===this)closeM()});
+function openExp(n){
+  var x=EXP[n];
+  show('<h2>'+x.i+' '+x.t+'</h2><div class="prog">الصف '+(x.g==='5'?'الخامس':'السادس')+' · '+x.time+' · '+x.std+'</div>'+
+  '<h4>🧰 الأدوات</h4><ul>'+x.m.map(function(a){return '<li>'+a+'</li>'}).join('')+'</ul>'+
+  '<h4>📋 الخطوات</h4><ol>'+x.s.map(function(a){return '<li>'+a+'</li>'}).join('')+'</ol>'+
+  '<h4>💡 التفسير العلمي</h4><div class="box">'+x.w+'</div>'+
+  '<h4>⚠️ السلامة</h4><div class="box">نفّذ التجربة بإشراف المعلم أو شخص بالغ، وارتدِ نظارات واقية عند الحاجة.</div>'+
+  '<div style="margin-top:18px"><button class="btn" id="done" onclick="doneExp(this)">أنجزت التجربة ✓ (+10)</button></div>');
+}
+function doneExp(b){addPts(10);b.disabled=true;b.textContent='أحسنت! تمت إضافة النقاط 🎉'}
+function openGame(n){var k=GAMES[n].k;({quiz:quiz,mem:mem,sort:sort})[k]()}
+
+/* Quiz */
+var Q=[
+{q:'ما الغاز الناتج عن تفاعل الخل مع بيكنج صودا؟',o:['الأكسجين','ثاني أكسيد الكربون','الهيدروجين'],a:1},
+{q:'من أين تحصل النباتات على معظم المواد اللازمة لنموها؟',o:['من التربة فقط','من الهواء والماء','من الظلام'],a:1},
+{q:'ماذا يحدث لطول الظل وقت الظهيرة؟',o:['يكون الأقصر','يكون الأطول','يختفي دائمًا'],a:0},
+{q:'ما القانون الصحيح للكثافة؟',o:['الكتلة × الحجم','الكتلة ÷ الحجم','الحجم ÷ الكتلة'],a:1},
+{q:'تنتقل الطاقة الحرارية من الجسم…',o:['الأبرد إلى الأسخن','الأسخن إلى الأبرد','لا تنتقل أبدًا'],a:1},
+{q:'عند إذابة الملح في الماء، كتلة المحلول تساوي…',o:['كتلة الماء فقط','مجموع كتلة الماء والملح','أقل من كتلة الماء'],a:1}
+];
+var qi=0,qs=0;
+function quiz(){qi=0;qs=0;qShow()}
+function qShow(){
+  if(qi>=Q.length){var p=qs*5;addPts(p);show('<h2>🏆 النتيجة</h2><div class="big">'+(qs>=5?'🥇':qs>=3?'🥈':'🥉')+'</div><p style="text-align:center;font-size:20px">أجبت صحيحًا على '+qs+' من '+Q.length+'<br>ربحت '+p+' نقطة</p><div style="text-align:center"><button class="btn" onclick="quiz()">العب مرة أخرى</button></div>');return}
+  var x=Q[qi];
+  show('<h2>🧠 تحدّي العلوم</h2><div class="prog">السؤال '+(qi+1)+' من '+Q.length+'</div><h4 style="color:#fff;font-size:19px">'+x.q+'</h4>'+
+  x.o.map(function(o,j){return '<button class="opt" onclick="qAns(this,'+j+')">'+o+'</button>'}).join(''));
+}
+function qAns(b,j){
+  var all=document.querySelectorAll('.opt');
+  all.forEach(function(o){o.disabled=true});
+  if(j===Q[qi].a){b.classList.add('ok');qs++}else{b.classList.add('no');all[Q[qi].a].classList.add('ok')}
+  setTimeout(function(){qi++;qShow()},1100);
+}
+
+/* Memory */
+var MP=[['🌋','تفاعل كيميائي'],['🌡️','حرارة'],['🌱','نبات'],['🧊','صلب'],['💧','سائل'],['☁️','غاز']];
+var mc=[],mo=[],mm=0,md2=0,lock=false;
+function mem(){
+  mc=[];MP.forEach(function(p,i){mc.push({k:i,t:p[0],e:1});mc.push({k:i,t:p[1],e:0})});
+  mc.sort(function(){return Math.random()-.5});mo=[];mm=0;md2=0;lock=false;mDraw();
+}
+function mDraw(){
+  show('<h2>🃏 لعبة الذاكرة</h2><div class="prog">المحاولات: '+mm+' · الأزواج: '+md2+' / '+MP.length+'</div><div class="mem">'+
+  mc.map(function(c,i){var up=mo.indexOf(i)>-1,dn=c.d;return '<button class="mc '+(dn?'done':up?'up':'')+'" onclick="mFlip('+i+')">'+((up||dn)?(c.e?'<span class="e">'+c.t+'</span>':c.t):'❓')+'</button>'}).join('')+'</div>');
+}
+function mFlip(i){
+  if(lock||mc[i].d||mo.indexOf(i)>-1)return;
+  mo.push(i);mDraw();
+  if(mo.length===2){
+    mm++;lock=true;
+    var a=mc[mo[0]],b=mc[mo[1]];
+    setTimeout(function(){
+      if(a.k===b.k){a.d=b.d=1;md2++}
+      mo=[];lock=false;mDraw();
+      if(md2===MP.length){var p=Math.max(10,50-mm*3);addPts(p);show('<h2>🎉 أحسنت!</h2><div class="big">🏅</div><p style="text-align:center;font-size:20px">أنهيت اللعبة في '+mm+' محاولة<br>ربحت '+p+' نقطة</p><div style="text-align:center"><button class="btn" onclick="mem()">العب مرة أخرى</button></div>')}
+    },800);
+  }
+}
+
+/* Sort */
+var SI=[['🧊','مكعب ثلج','s'],['💧','ماء','l'],['♨️','بخار الماء','g'],['🪨','صخرة','s'],['🧃','عصير','l'],['🎈','هواء داخل البالون','g'],['🪵','قطعة خشب','s'],['🥛','حليب','l']];
+var si=0,ss=0,sl=[];
+function sort(){sl=SI.slice().sort(function(){return Math.random()-.5});si=0;ss=0;sShow()}
+function sShow(){
+  if(si>=sl.length){var p=ss*6;addPts(p);show('<h2>🏆 انتهت اللعبة</h2><div class="big">'+(ss>=7?'🥇':'🥈')+'</div><p style="text-align:center;font-size:20px">أصبت '+ss+' من '+sl.length+'<br>ربحت '+p+' نقطة</p><div style="text-align:center"><button class="btn" onclick="sort()">العب مرة أخرى</button></div>');return}
+  var x=sl[si];
+  show('<h2>🧊 صنّف حالات المادة</h2><div class="prog">'+(si+1)+' من '+sl.length+'</div><div class="big">'+x[0]+'</div><p style="text-align:center;font-size:20px;margin:0">'+x[1]+'</p>'+
+  '<div class="row3" style="margin-top:14px"><button class="opt" onclick="sAns(this,\'s\')">صلب</button><button class="opt" onclick="sAns(this,\'l\')">سائل</button><button class="opt" onclick="sAns(this,\'g\')">غاز</button></div>');
+}
+function sAns(b,v){
+  var ok=v===sl[si][2];
+  document.querySelectorAll('.opt').forEach(function(o){o.disabled=true});
+  b.classList.add(ok?'ok':'no');if(ok)ss++;
+  setTimeout(function(){si++;sShow()},900);
+}
+
+/* Filters */
+document.querySelectorAll('[data-t]').forEach(function(b){b.onclick=function(){document.querySelectorAll('[data-t]').forEach(function(x){x.classList.remove('on')});b.classList.add('on');T=b.dataset.t;render()}});
+document.querySelectorAll('[data-g]').forEach(function(b){b.onclick=function(){document.querySelectorAll('[data-g]').forEach(function(x){x.classList.remove('on')});b.classList.add('on');G=b.dataset.g;render()}});
+render();
+</script>
+</body>
+</html>
