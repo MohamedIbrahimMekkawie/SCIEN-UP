@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>SCIENCE.SA | Science Platform – American Track</title>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--hd:#254a94;--bl:#0071bc;--tl:#12a3b4;--bg:#f0f3fa;--tx:#4b5a77;--ye:#f5d000;color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth;background:var(--bg)}
+*,*::before,*::after{box-sizing:inherit}
+body{margin:0;background:var(--bg);color:var(--tx);font-family:'Cairo','Segoe UI',Tahoma,Arial,sans-serif;line-height:1.6}
+button{font-family:inherit;cursor:pointer}
+header{background:var(--hd);border-bottom:3px solid var(--ye)}
+.top{display:flex;align-items:center;gap:26px;padding:10px 4vw;flex-wrap:wrap;max-width:1400px;margin:auto}
+.logo{font-size:28px;font-weight:800;color:#fff;letter-spacing:1px;text-decoration:none}.logo b{color:var(--ye)}
+nav{display:flex;gap:22px;flex:1;flex-wrap:wrap}
+nav a,nav button{color:#fff;text-decoration:none;font-size:16px;background:none;border:0;padding:4px 0;position:relative}
+nav a.on::after{content:"";position:absolute;bottom:-12px;inset-inline-start:50%;border:7px solid transparent;border-bottom-color:var(--ye);margin-inline-start:-7px}
+.tools{display:flex;gap:12px;align-items:center}
+.lg{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.6);border-radius:6px;padding:3px 12px;font-weight:700}
+.pts{background:var(--ye);color:#1d2d5c;font-weight:800;border-radius:16px;padding:2px 14px}
+.wrap{max-width:1400px;margin:auto;padding:0 4vw}
+.tiles{display:grid;grid-template-columns:repeat(6,1fr);gap:12px;margin:22px auto}
+.tile{border:0;border-radius:4px;color:#fff;text-align:start;padding:10px 16px;display:flex;flex-direction:column;font-size:16px;min-height:88px;justify-content:space-between}
+.tile div{display:flex;justify-content:space-between;align-items:center;font-size:30px}
+.tile div span{font-size:32px;font-weight:600}
+.cols{display:grid;grid-template-columns:280px 1fr 290px;gap:22px;align-items:start;padding-bottom:40px}
+.pn{background:#fff;border-radius:6px;box-shadow:0 1px 3px rgba(20,40,90,.15);overflow:hidden;margin-bottom:22px}
+.ph{background:var(--bl);color:#fff;padding:11px 18px;font-size:14px;text-transform:uppercase;display:flex;justify-content:space-between;align-items:center}
+.ph.t{background:var(--tl)}
+.pb{padding:14px 18px}
+.gi{display:block;width:100%;text-align:start;background:none;border:0;color:var(--tx);font-size:16px;padding:6px 18px}
+.gi:hover,.gi.on{background:#e8f1fb;color:var(--bl);font-weight:700}
+.hof{text-align:center}.hof .av{font-size:70px;background:#e8f1fb;border-radius:8px;padding:10px;margin-bottom:8px}
+.hof h4{color:var(--bl);font-size:20px;margin:4px 0;font-weight:600}.hof small{color:#8a97b0}
+.cal{width:100%;border-collapse:collapse;table-layout:fixed;text-align:center}
+.cal th{font-weight:400;font-size:13px;border-bottom:1px solid #dde5f3;padding:3px}
+.cal td{border:1px solid #e3e9f5;height:54px;vertical-align:top;font-size:15px;cursor:pointer}
+.cal td:hover{background:#eef5fc}.cal .e{background:#f4f6fb;cursor:default}
+.cal .td{outline:2px solid var(--bl);outline-offset:-2px}.cal small{display:block;font-size:16px}
+.lib{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:20px;padding:18px}
+.cd{background:#fff;border-radius:6px;box-shadow:0 1px 4px rgba(20,40,90,.2);overflow:hidden;cursor:pointer;display:flex;flex-direction:column;position:relative;border:0;text-align:center;padding:0;color:var(--tx)}
+.cd:hover{box-shadow:0 4px 14px rgba(0,113,188,.35)}
+.cd .im{height:140px;display:grid;place-items:center;font-size:64px;position:relative}
+.cd .cr{position:absolute;top:0;inset-inline-start:0;background:var(--bl);color:#fff;font-size:12px;font-weight:800;padding:12px 18px 2px 8px;clip-path:polygon(0 0,100% 0,0 100%);width:52px;height:52px;text-align:start;padding:4px 6px}
+.cd h3{color:var(--bl);font-weight:400;font-size:19px;margin:10px 10px 2px;line-height:1.3}
+.cd p{margin:4px 14px 8px;font-size:14px;flex:1}
+.cd .mt{font-size:12px;color:#8a97b0;padding:0 10px 12px}
+.quest{display:flex;border-radius:6px;overflow:hidden;background:#14c1f0;color:#fff;cursor:pointer;margin-bottom:22px;box-shadow:0 1px 3px rgba(20,40,90,.2)}
+.quest .ow{background:#7cd7f5;font-size:46px;padding:6px 14px}.quest div{padding:8px 16px;line-height:1.2}.quest b{font-size:26px;display:block}
+.lp{background:linear-gradient(135deg,#0f6b86,var(--tl));color:#fff;border-radius:6px;padding:20px;text-align:center;margin-bottom:22px;cursor:pointer}
+.lp .big2{font-size:56px}.lp h3{margin:4px 0}.lp p{margin:0;font-size:14px;opacity:.9}
+.fab{position:fixed;inset-inline-end:18px;bottom:calc(18px + env(safe-area-inset-bottom,0px));width:60px;height:60px;border-radius:50%;border:3px solid var(--ye);background:var(--hd);font-size:28px;box-shadow:0 4px 14px rgba(0,0,0,.35);z-index:20;color:#fff}
+.btn{background:#6ab647;color:#fff;border:0;border-radius:5px;padding:9px 20px;font-weight:700;font-size:15px}
+.btn:hover{filter:brightness(1.08)}.btn:disabled{background:#9db4d6;cursor:default}
+.btn.bl{background:var(--bl)}
+footer{background:var(--hd);color:#dfe8fb;text-align:center;padding:26px 4vw}
+footer b{display:block;color:#fff;font-size:26px;letter-spacing:1px}
+.ov{position:fixed;inset:0;background:rgba(10,25,60,.65);display:none;align-items:center;justify-content:center;padding:max(14px,env(safe-area-inset-top)) 14px max(14px,env(safe-area-inset-bottom));z-index:50}
+.ov.show{display:flex}
+.md{background:#fff;border-radius:8px;max-width:640px;width:100%;max-height:100%;overflow:auto;padding:24px;box-shadow:0 10px 40px rgba(0,0,0,.4)}
+.md h2{color:var(--bl);margin:0 0 4px;font-weight:600}
+.md h4{color:var(--hd);margin:16px 0 4px}
+.md ul,.md ol{margin:0;padding-inline-start:22px}
+.bx{background:#eef5fc;border-radius:6px;padding:10px 14px}
+.x{float:inline-end;background:#e8f1fb;border:0;border-radius:6px;width:34px;height:34px;font-size:20px;color:var(--hd)}
+.opt{display:block;width:100%;text-align:start;font-size:16px;background:#f3f7fd;border:1px solid #c9d8ee;color:var(--tx);border-radius:6px;padding:10px 14px;margin-top:9px}
+.opt:hover{border-color:var(--bl)}.opt.ok{background:#d9f2cf;border-color:#6ab647}.opt.no{background:#fbd5d9;border-color:#e84e60}
+.mem{display:grid;grid-template-columns:repeat(4,1fr);gap:9px;margin-top:12px}
+.mc{aspect-ratio:1;border-radius:8px;border:1px solid #c9d8ee;background:#e8f1fb;font-size:14px;font-weight:700;color:var(--hd);display:grid;place-items:center;padding:3px}
+.mc.up{background:#fff3b0;border-color:var(--ye)}.mc.done{background:#d9f2cf;border-color:#6ab647}.mc .em{font-size:32px}
+.big{font-size:80px;text-align:center;margin:6px 0}.row3{display:flex;gap:8px}.row3 .opt{text-align:center}
+.prog{font-size:14px;color:#8a97b0}
+.labw{display:flex;gap:18px;flex-wrap:wrap;align-items:flex-start}
+.sub{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;flex:1;min-width:210px}
+.sb{border:2px solid #c9d8ee;background:#f3f7fd;border-radius:8px;padding:8px 2px;text-align:center;font-size:13px;color:var(--tx)}
+.sb span{display:block;font-size:26px}.sb.on{border-color:var(--bl);background:#dcecfa}
+.bk{width:130px;height:170px;border:4px solid #9db4d6;border-top:0;border-radius:0 0 26px 26px;position:relative;overflow:hidden;background:#f9fbff;margin:auto}
+.lq{position:absolute;bottom:0;width:100%;transition:all .5s}
+.bb{position:absolute;bottom:0;width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,.9);border:1px solid #9db4d6;animation:up 1.6s infinite ease-in}
+@keyframes up{to{transform:translateY(-130px);opacity:0}}
+@media(max-width:1000px){.cols{grid-template-columns:1fr}.tiles{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:520px){nav{display:none}.tiles{grid-template-columns:repeat(2,1fr)}}
+</style>
+</head>
+<body>
+<header id="top"><div class="top">
+  <a class="logo" href="#top">SCIENCE<b>.</b>SA</a>
+  <nav><a class="on" href="#top" data-i="n1"></a><a href="#lib" data-i="n2"></a><a href="#gm" data-i="n3"></a><button onclick="lab()" data-i="n4"></button></nav>
+  <div class="tools"><button class="lg" id="lg" onclick="setL()">EN</button><span class="pts">⭐ <i id="pts">0</i></span></div>
+</div></header>
+
+<div class="wrap">
+  <section class="tiles" id="tiles"></section>
+  <div class="cols"><aside id="L"></aside><section id="M"></section><aside id="R"></aside></div>
+</div>
+<footer><b>SCIENCE.SA</b><span data-i="ft"></span></footer>
+<button class="fab" onclick="lab()" aria-label="Virtual Science Lab">⚗️</button>
+<div class="ov" id="ov"><div class="md" id="md"></div></div>
+
+<script>
+var lang='ar',pts=0,GR='all',sci=0,seen={};
+var S={
+a:{n1:'سطح المكتب',n2:'التجارب',n3:'الألعاب',n4:'المعمل الافتراضي ⚗️',ft:'منصة العلوم للمسار الأمريكي · الصفوف 1–8 · معايير NGSS',
+ tAll:'مكتبتي',tExp:'التجارب',tGm:'الألعاب',tLab:'المعمل الافتراضي',tGr:'الصفوف',tPt:'نقاطي',
+ grades:'المراحل الدراسية',gr:'الصف ',all:'كل الصفوف',hall:'قاعة العلماء',next:'عالم آخر ←',cal:'التقويم',calH:'اضغط على أي يوم لتجربة اليوم',
+ lib:'تجارب علمية',gm:'ألعاب تعليمية',q1:'تحدّي العلوم',q2:'اليومي',lab:'المعمل الافتراضي',labD:'اخلط المواد وراقب التفاعلات بأمان!',
+ min:' دقيقة',det:'التفاصيل',play:'العب الآن',mat:'🧰 الأدوات',stp:'📋 الخطوات',why:'💡 التفسير العلمي',saf:'⚠️ السلامة',safT:'نفّذ التجربة بإشراف المعلم أو شخص بالغ.',
+ done:'أنجزت التجربة ✓ (+10)',doneO:'أحسنت! أضيفت النقاط 🎉',qn:'السؤال ',of:' من ',res:'🏆 النتيجة',got:'أجبت صحيحًا على ',pt:'ربحت نقاطًا: ',again:'العب مرة أخرى',
+ mem:'لعبة الذاكرة',memD:'طابق الرمز مع المصطلح العلمي.',srt:'صنّف حالات المادة',srtD:'صلب أم سائل أم غاز؟',qzD:'أسئلة سريعة في العلوم.',
+ tries:'المحاولات: ',pairs:'الأزواج: ',s1:'صلب',s2:'سائل',s3:'غاز',pick:'اختر مادتين',mix:'اخلط',rst:'إعادة',hint:'اختر مادتين ثم اضغط «اخلط».',none:'لا يحدث شيء ملحوظ. جرّب مزيجًا آخر!',newc:'اكتشاف جديد! +5'},
+e:{n1:'Desktop',n2:'Experiments',n3:'Games',n4:'Virtual Lab ⚗️',ft:'Science platform for the American track · Grades 1–8 · NGSS aligned',
+ tAll:'My desktop',tExp:'Experiments',tGm:'Games',tLab:'Virtual Lab',tGr:'Grades',tPt:'My points',
+ grades:'Grades',gr:'Grade ',all:'All grades',hall:'Hall of fame',next:'Next scientist →',cal:'Calendar',calH:'Click any day for the experiment of the day',
+ lib:'Science experiments',gm:'Educational games',q1:'Science',q2:'Daily quest',lab:'Virtual Science Lab',labD:'Mix substances and watch reactions safely!',
+ min:' min',det:'Details',play:'Play now',mat:'🧰 Materials',stp:'📋 Steps',why:'💡 The science',saf:'⚠️ Safety',safT:'Do this experiment with a teacher or an adult.',
+ done:'Experiment done ✓ (+10)',doneO:'Great job! Points added 🎉',qn:'Question ',of:' of ',res:'🏆 Result',got:'Correct answers: ',pt:'Points earned: ',again:'Play again',
+ mem:'Memory Match',memD:'Match each icon with its science term.',srt:'Sort states of matter',srtD:'Solid, liquid or gas?',qzD:'Quick science questions.',
+ tries:'Tries: ',pairs:'Pairs: ',s1:'Solid',s2:'Liquid',s3:'Gas',pick:'Pick two substances',mix:'Mix',rst:'Reset',hint:'Pick two substances, then press “Mix”.',none:'Nothing noticeable happens. Try another mix!',newc:'New discovery! +5'}};
+var X=[
+{i:'🎸',c:'#f2a25c,#e8575d',g:1,s:'1-PS4-1',m:15,t:{a:'قيثارة الأربطة المطاطية',e:'Rubber Band Guitar'},d:{a:'اكتشف كيف تصنع الاهتزازات الصوت.',e:'Discover how vibrations make sound.'},
+ mt:{a:['علبة فارغة','3 أربطة مطاطية بسماكات مختلفة'],e:['Empty box','3 rubber bands of different thickness']},
+ st:{a:['شدّ الأربطة حول العلبة.','اسحب كل رباط وأصغِ للصوت.','قارن بين الرفيع والسميك.'],e:['Stretch the bands around the box.','Pluck each band and listen.','Compare thin and thick bands.']},
+ w:{a:'الأجسام المهتزة تُصدر صوتًا، والرباط الأرفع يهتز أسرع فيعطي صوتًا أحدّ.',e:'Vibrating objects make sound; a thinner band vibrates faster and sounds higher.'}},
+{i:'🛁',c:'#4bb8e0,#2a6fd4',g:2,s:'2-PS1-1',m:15,t:{a:'يطفو أم يغرق؟',e:'Float or Sink?'},d:{a:'صنّف المواد حسب خصائصها الظاهرة.',e:'Classify materials by their properties.'},
+ mt:{a:['حوض ماء','فلين وعملة ومشبك وقلم'],e:['Tub of water','Cork, coin, clip, pencil']},
+ st:{a:['توقّع لكل جسم: يطفو أم يغرق؟','ضعه في الماء ولاحظ.','سجّل النتائج في جدول وصنّف الأجسام.'],e:['Predict for each item: float or sink?','Place it in water and observe.','Record results in a table and sort the items.']},
+ w:{a:'خصائص المادة مثل الكثافة والشكل تحدد هل تطفو أم تغرق.',e:'Properties such as density and shape decide whether it floats or sinks.'}},
+{i:'🧲',c:'#e84e60,#7a4be0',g:3,s:'3-PS2-3',m:20,t:{a:'قوة المغناطيس',e:'Magnet Power'},d:{a:'اختبر كيف يؤثر المغناطيس عن بعد.',e:'Test how magnets act from a distance.'},
+ mt:{a:['مغناطيسان','مشابك ورق وعملة','مسطرة'],e:['Two magnets','Paper clips and a coin','Ruler']},
+ st:{a:['قرّب المغناطيس من أجسام مختلفة.','قِس أبعد مسافة يجذب منها المشبك.','قرّب قطبين متشابهين ثم مختلفين.'],e:['Bring the magnet near different objects.','Measure the farthest distance it pulls a clip.','Try like poles, then different poles.']},
+ w:{a:'الأقطاب المتشابهة تتنافر والمختلفة تتجاذب دون تلامس.',e:'Like poles repel and unlike poles attract, without touching.'}},
+{i:'⛰️',c:'#8c6a3c,#d4a93c',g:4,s:'4-ESS2-1',m:25,t:{a:'التعرية بالماء',e:'Water Erosion'},d:{a:'شاهد كيف يغيّر الماء شكل الأرض.',e:'See how water reshapes land.'},
+ mt:{a:['صينية رمل','إبريق ماء','حصى'],e:['Tray of sand','Jug of water','Pebbles']},
+ st:{a:['شكّل تلة رمل في طرف الصينية.','أمِل الصينية وصبّ الماء ببطء.','لاحظ ما حمله الماء.','كرّر مع الحصى حول التلة.'],e:['Build a sand hill at one end.','Tilt the tray and pour water slowly.','Observe what the water carries.','Repeat with pebbles around the hill.']},
+ w:{a:'الماء الجاري يفتّت التربة وينقلها، والحصى والنباتات تبطئ التعرية.',e:'Flowing water breaks up and moves soil; pebbles and plants slow erosion.'}},
+{i:'🌋',c:'#b4452b,#3b1d6e',g:5,s:'5-PS1-4',m:20,t:{a:'البركان الكيميائي',e:'Chemical Volcano'},d:{a:'هل ينتج الخلط مادة جديدة؟',e:'Does mixing make a new substance?'},
+ mt:{a:['بيكنج صودا','خل','صابون أطباق وملوّن'],e:['Baking soda','Vinegar','Dish soap and food coloring']},
+ st:{a:['ضع البيكنج صودا والصابون والملوّن في كوب.','توقّع ماذا سيحدث.','صبّ الخل وراقب.','سجّل ملاحظاتك.'],e:['Put baking soda, soap and coloring in a cup.','Predict what will happen.','Pour in vinegar and watch.','Record your observations.']},
+ w:{a:'ينتج التفاعل غاز ثاني أكسيد الكربون، أي مادة جديدة.',e:'The reaction makes carbon dioxide gas, a new substance.'}},
+{i:'🧪',c:'#7a4be0,#d44a8c',g:6,s:'PS1.A',m:30,t:{a:'برج الكثافة',e:'Density Tower'},d:{a:'ادمج سوائل مختلفة الكثافة في طبقات.',e:'Stack liquids of different densities.'},
+ mt:{a:['عسل','صابون سائل','ماء ملوّن وزيت','كوب شفاف'],e:['Honey','Liquid soap','Colored water and oil','Clear glass']},
+ st:{a:['صبّ العسل ثم الصابون ثم الماء ثم الزيت ببطء.','اترك الكوب دون تحريك.','ارسم ترتيب الطبقات.'],e:['Slowly pour honey, soap, water, then oil.','Leave the glass undisturbed.','Draw the order of the layers.']},
+ w:{a:'الكثافة = الكتلة ÷ الحجم؛ الأعلى كثافة يستقر في الأسفل.',e:'Density = mass ÷ volume; the densest liquid sinks to the bottom.'}},
+{i:'🔬',c:'#2a8a5e,#8bd15a',g:7,s:'MS-LS1-2',m:30,t:{a:'خلايا البصل',e:'Onion Cells'},d:{a:'شاهد وحدة بناء الكائن الحي بالمجهر.',e:'See the building block of life under a microscope.'},
+ mt:{a:['بصلة','مجهر وشريحة','يود أو ملوّن طعام'],e:['An onion','Microscope and slide','Iodine or food coloring']},
+ st:{a:['انزع غشاءً رقيقًا من طبقة البصل.','ضعه على الشريحة وأضف قطرة صبغة.','شاهده بالمجهر.','ارسم الجدار الخلوي والنواة.'],e:['Peel a thin skin from an onion layer.','Place it on a slide with a drop of stain.','View it under the microscope.','Draw the cell wall and nucleus.']},
+ w:{a:'الخلية وحدة بناء الكائن الحي، ولكل جزء فيها وظيفة.',e:'The cell is the unit of life, and each part has a function.'}},
+{i:'🎈',c:'#2a6fd4,#e8575d',g:8,s:'MS-PS2-2',m:25,t:{a:'صاروخ البالون',e:'Balloon Rocket'},d:{a:'اكتشف قوانين نيوتن للحركة عمليًا.',e:'Explore Newton’s laws of motion hands-on.'},
+ mt:{a:['بالون','خيط طويل وقشة','شريط لاصق ومسطرة'],e:['Balloon','Long string and a straw','Tape and ruler']},
+ st:{a:['مرّر الخيط داخل القشة وثبّته بين نقطتين.','الصق البالون المنفوخ بالقشة.','أطلقه وقِس المسافة.','كرّر بكميات هواء مختلفة.'],e:['Thread the string through the straw and fix it.','Tape the inflated balloon to the straw.','Release it and measure the distance.','Repeat with different amounts of air.']},
+ w:{a:'الهواء الخارج يدفع البالون للأمام؛ لكل فعل رد فعل مساوٍ له ومعاكس.',e:'Escaping air pushes the balloon forward; every action has an equal and opposite reaction.'}}
+];
+var SC=[{i:'🔭',y:'1571 – 1630',n:{a:'يوهانس كبلر',e:'Johannes Kepler'},d:{a:'فلكي ألماني وصف قوانين حركة الكواكب الثلاثة.',e:'German astronomer who described the three laws of planetary motion.'}},
+{i:'⚛️',y:'1867 – 1934',n:{a:'ماري كوري',e:'Marie Curie'},d:{a:'رائدة في دراسة النشاط الإشعاعي وفازت بجائزتي نوبل.',e:'Pioneer of radioactivity research and winner of two Nobel Prizes.'}},
+{i:'🍎',y:'1643 – 1727',n:{a:'إسحاق نيوتن',e:'Isaac Newton'},d:{a:'صاغ قوانين الحركة وقانون الجذب العام.',e:'Formulated the laws of motion and universal gravitation.'}}];
+var Q=[{q:{a:'ما الغاز الناتج من تفاعل الخل مع البيكنج صودا؟',e:'Which gas forms when vinegar reacts with baking soda?'},o:{a:['الأكسجين','ثاني أكسيد الكربون','الهيدروجين'],e:['Oxygen','Carbon dioxide','Hydrogen']},k:1},
+{q:{a:'ما قانون الكثافة؟',e:'What is the formula for density?'},o:{a:['الكتلة × الحجم','الكتلة ÷ الحجم','الحجم ÷ الكتلة'],e:['Mass × volume','Mass ÷ volume','Volume ÷ mass']},k:1},
+{q:{a:'من أين تحصل النباتات على معظم مواد نموها؟',e:'Where do plants get most materials for growth?'},o:{a:['من التربة فقط','من الهواء والماء','من الظلام'],e:['Soil only','Air and water','Darkness']},k:1},
+{q:{a:'تنتقل الحرارة من الجسم…',e:'Heat moves from the…'},o:{a:['الأبرد إلى الأسخن','الأسخن إلى الأبرد','لا تنتقل'],e:['Colder to hotter','Hotter to colder','It does not move']},k:1},
+{q:{a:'ماذا يحدث للأقطاب المتشابهة في المغناطيس؟',e:'What do like magnetic poles do?'},o:{a:['تتجاذب','تتنافر','لا شيء'],e:['Attract','Repel','Nothing']},k:1}];
+var MP=[['🌋',{a:'تفاعل',e:'Reaction'}],['🌡️',{a:'حرارة',e:'Heat'}],['🌱',{a:'نبات',e:'Plant'}],['🧊',{a:'صلب',e:'Solid'}],['💧',{a:'سائل',e:'Liquid'}],['☁️',{a:'غاز',e:'Gas'}]];
+var SI=[['🧊',{a:'مكعب ثلج',e:'Ice cube'},'s'],['💧',{a:'ماء',e:'Water'},'l'],['♨️',{a:'بخار الماء',e:'Water vapor'},'g'],['🪨',{a:'صخرة',e:'Rock'},'s'],['🧃',{a:'عصير',e:'Juice'},'l'],['🎈',{a:'الهواء في بالون',e:'Air in a balloon'},'g'],['🪵',{a:'خشب',e:'Wood'},'s'],['🥛',{a:'حليب',e:'Milk'},'l']];
+var G=[{i:'🧠',c:'#1d3a6e,#8a4be0',f:'quiz',n:'q1',d:'qzD'},{i:'🃏',c:'#0f4a5e,#3dbfa0',f:'mem',n:'mem',d:'memD'},{i:'🧊',c:'#1d2b6e,#4bb8e0',f:'sort',n:'srt',d:'srtD'}];
+var SB=[['bs','🥄',{a:'بيكنج صودا',e:'Baking soda'},'#f4f4f4'],['vin','🍶',{a:'خل',e:'Vinegar'},'#f3e3b0'],['wat','💧',{a:'ماء',e:'Water'},'#8cc8f2'],['oil','🛢️',{a:'زيت',e:'Oil'},'#f2c94c'],['sal','🧂',{a:'ملح',e:'Salt'},'#ececec'],['lem','🍋',{a:'عصير ليمون',e:'Lemon juice'},'#ffe66d']];
+var RX={'bs+vin':['r','ظهرت فقاعات غاز ثاني أكسيد الكربون! تفاعل كيميائي ومادة جديدة.','CO₂ bubbles formed! A chemical reaction made a new substance.'],
+'bs+lem':['r','فقاعات! حمض الليمون تفاعل مع البيكنج صودا.','Bubbles! Lemon acid reacted with baking soda.'],
+'bs+wat':['s','ذاب البيكنج صودا؛ تغيّر فيزيائي بلا مادة جديدة.','Baking soda dissolved: a physical change, no new substance.'],
+'sal+wat':['s','ذاب الملح في الماء ويمكن استعادته بالتبخير.','Salt dissolved in water and can be recovered by evaporation.'],
+'oil+wat':['l','لا يمتزجان: الزيت أقل كثافة فيطفو فوق الماء.','They do not mix: oil is less dense and floats on water.'],
+'oil+vin':['l','لا يمتزجان: يطفو الزيت فوق الخل.','They do not mix: oil floats on vinegar.'],
+'vin+wat':['m','يمتزجان بسهولة دون تفاعل.','They mix easily with no reaction.'],
+'lem+wat':['m','يمتزجان بسهولة دون تفاعل.','They mix easily with no reaction.']};
+function K(){return lang==='ar'?'a':'e'}
+function t(k){return S[K()][k]}
+function p(o){return o[K()]}
+function $(s){return document.querySelector(s)}
+function addP(n){pts+=n;$('#pts').textContent=pts}
+function gl(n){return t('gr')+n}
+function setL(){lang=lang==='ar'?'e':'ar';document.documentElement.lang=lang==='ar'?'ar':'en';document.documentElement.dir=lang==='ar'?'rtl':'ltr';$('#lg').textContent=lang==='ar'?'EN':'عربي';closeM();build()}
+function pn(h,b,c){return '<div class="pn"><div class="ph'+(c?' '+c:'')+'">'+h+'</div>'+b+'</div>'}
+function build(){
+  document.querySelectorAll('[data-i]').forEach(function(e){e.textContent=t(e.dataset.i)});
+  var T=[['#a77a76','📰',X.length+3,'tAll','#top'],['#f57c14','📚',X.length,'tExp','#lib'],['#6ab647','🎮',G.length,'tGm','#gm'],['#e84e60','⚗️',1,'tLab','lab()'],['#43a5d4','🎓',8,'tGr','#lib'],['#b974c9','⭐',pts,'tPt','#top']];
+  $('#tiles').innerHTML=T.map(function(x){return '<button class="tile" style="background:'+x[0]+'" onclick="'+(x[4]==='lab()'?'lab()':'location.hash=\''+x[4]+'\'')+'"><div>'+x[1]+'<span>'+x[2]+'</span></div>'+t(x[3])+'</button>'}).join('');
+  var gl2='<button class="gi'+(GR==='all'?' on':'')+'" onclick="setG(\'all\')">📘 '+t('all')+'</button>';
+  for(var i=1;i<=8;i++)gl2+='<button class="gi'+(GR==i?' on':'')+'" onclick="setG('+i+')">📘 '+gl(i)+'</button>';
+  var s=SC[sci];
+  $('#L').innerHTML=pn(t('grades'),'<div style="padding:8px 0">'+gl2+'</div>')+
+   pn(t('hall'),'<div class="pb hof"><div class="av">'+s.i+'</div><h4>'+p(s.n)+'</h4><small>'+s.y+'</small><p>'+p(s.d)+'</p><button class="btn bl" onclick="sci=(sci+1)%3;build()">'+t('next')+'</button></div>');
+  var lib=X.filter(function(x){return GR==='all'||x.g==GR}).map(function(x){var n=X.indexOf(x);
+   return '<button class="cd" onclick="openX('+n+')"><div class="im" style="background:linear-gradient(135deg,'+x.c+')">'+x.i+'<span class="cr">'+x.g+'</span></div><h3>'+p(x.t)+'</h3><p>'+p(x.d)+'</p><div class="mt">'+gl(x.g)+' · '+x.m+t('min')+' · <span dir="ltr">'+x.s+'</span></div></button>'}).join('');
+  $('#M').innerHTML=pn(t('cal'),'<div class="pb">'+cal()+'<div class="prog" style="margin-top:8px">'+t('calH')+'</div></div>')+
+   '<div id="lib">'+pn(t('lib'),'<div class="lib">'+lib+'</div>','t')+'</div>';
+  $('#R').innerHTML='<div class="quest" onclick="quiz()"><div class="ow">🦉</div><div><small>SCIENCE</small><b>'+t('q2')+'</b></div></div><div class="lp" onclick="lab()"><div class="big2">⚗️</div><h3>'+t('lab')+'</h3><p>'+t('labD')+'</p></div><div id="gm">'+
+   G.map(function(g){return '<button class="cd pn" style="width:100%" onclick="'+g.f+'()"><div class="im" style="background:linear-gradient(135deg,'+g.c+')">'+g.i+'<span class="cr">🎮</span></div><h3>'+t(g.n)+'</h3><p>'+t(g.d)+'</p><div class="mt">'+t('play')+' ←</div></button>'}).join('')+'</div>';
+}
+function setG(g){GR=g;build();location.hash='#lib'}
+function cal(){
+  var d=new Date(),y=d.getFullYear(),m=d.getMonth(),f=(new Date(y,m,1).getDay()+6)%7,n=new Date(y,m+1,0).getDate(),loc=lang==='ar'?'ar-u-ca-gregory-nu-latn':'en-GB';
+  var h='<div style="text-align:center;font-weight:700;color:var(--bl);margin-bottom:6px">'+new Intl.DateTimeFormat(loc,{month:'long',year:'numeric'}).format(d)+'</div><table class="cal"><tr>';
+  for(var i=0;i<7;i++)h+='<th>'+new Intl.DateTimeFormat(loc,{weekday:'short'}).format(new Date(2024,0,1+i))+'</th>';
+  h+='</tr><tr>';
+  for(i=0;i<f;i++)h+='<td class="e"></td>';
+  for(var k=1;k<=n;k++){if((f+k-1)%7===0&&k>1)h+='</tr><tr>';h+='<td'+(k===d.getDate()?' class="td"':'')+' onclick="openX('+(k%X.length)+')">'+k+'<small>'+(k===d.getDate()?'🦉':'')+'</small></td>'}
+  return h+'</tr></table>';
+}
+function show(h){$('#md').innerHTML='<button class="x" onclick="closeM()" aria-label="Close">×</button>'+h;$('#ov').classList.add('show')}
+function closeM(){$('#ov').classList.remove('show');$('#md').innerHTML=''}
+$('#ov').addEventListener('click',function(e){if(e.target===this)closeM()});
+function li(a){return '<li>'+a.join('</li><li>')+'</li>'}
+function openX(n){var x=X[n];
+  show('<h2>'+x.i+' '+p(x.t)+'</h2><div class="prog">'+gl(x.g)+' · '+x.m+t('min')+' · <span dir="ltr">'+x.s+'</span></div><h4>'+t('mat')+'</h4><ul>'+li(p(x.mt))+'</ul><h4>'+t('stp')+'</h4><ol>'+li(p(x.st))+'</ol><h4>'+t('why')+'</h4><div class="bx">'+p(x.w)+'</div><h4>'+t('saf')+'</h4><div class="bx">'+t('safT')+'</div><p><button class="btn" onclick="doneX(this,'+n+')">'+t('done')+'</button></p>')}
+function doneX(b,n){if(!seen['x'+n]){seen['x'+n]=1;addP(10);build()}b.disabled=true;b.textContent=t('doneO')}
+
+/* Quiz */
+var qi=0,qs=0;
+function quiz(){qi=0;qs=0;qS()}
+function qS(){
+  if(qi>=Q.length){var q=qs*5;addP(q);build();show('<h2>'+t('res')+'</h2><div class="big">'+(qs>=4?'🥇':'🥈')+'</div><p style="text-align:center;font-size:19px">'+t('got')+qs+t('of')+Q.length+'<br>'+t('pt')+q+'</p><p style="text-align:center"><button class="btn" onclick="quiz()">'+t('again')+'</button></p>');return}
+  var x=Q[qi];
+  show('<h2>🧠 '+t('q1')+'</h2><div class="prog">'+t('qn')+(qi+1)+t('of')+Q.length+'</div><h4 style="font-size:19px">'+p(x.q)+'</h4>'+p(x.o).map(function(o,j){return '<button class="opt" onclick="qA(this,'+j+')">'+o+'</button>'}).join(''));
+}
+function qA(b,j){var a=document.querySelectorAll('.opt');a.forEach(function(o){o.disabled=true});
+  if(j===Q[qi].k){b.classList.add('ok');qs++}else{b.classList.add('no');a[Q[qi].k].classList.add('ok')}
+  setTimeout(function(){qi++;qS()},1000)}
+
+/* Memory */
+var mc=[],mo=[],mm=0,mp=0,lk=false;
+function mem(){mc=[];MP.forEach(function(x,i){mc.push({k:i,t:x[0],e:1});mc.push({k:i,t:p(x[1]),e:0})});mc.sort(function(){return Math.random()-.5});mo=[];mm=0;mp=0;lk=false;mD()}
+function mD(){show('<h2>🃏 '+t('mem')+'</h2><div class="prog">'+t('tries')+mm+' · '+t('pairs')+mp+'/'+MP.length+'</div><div class="mem">'+mc.map(function(c,i){var u=mo.indexOf(i)>-1;return '<button class="mc '+(c.d?'done':u?'up':'')+'" onclick="mF('+i+')">'+((u||c.d)?(c.e?'<span class="em">'+c.t+'</span>':c.t):'❓')+'</button>'}).join('')+'</div>')}
+function mF(i){if(lk||mc[i].d||mo.indexOf(i)>-1)return;mo.push(i);mD();
+  if(mo.length===2){mm++;lk=true;var a=mc[mo[0]],b=mc[mo[1]];
+    setTimeout(function(){if(a.k===b.k){a.d=b.d=1;mp++}mo=[];lk=false;mD();
+      if(mp===MP.length){var q=Math.max(10,50-mm*3);addP(q);build();show('<h2>🎉</h2><div class="big">🏅</div><p style="text-align:center;font-size:19px">'+t('tries')+mm+'<br>'+t('pt')+q+'</p><p style="text-align:center"><button class="btn" onclick="mem()">'+t('again')+'</button></p>')}},800)}}
+
+/* Sort */
+var sl=[],si=0,ss=0;
+function sort(){sl=SI.slice().sort(function(){return Math.random()-.5});si=0;ss=0;sS()}
+function sS(){
+  if(si>=sl.length){var q=ss*6;addP(q);build();show('<h2>'+t('res')+'</h2><div class="big">'+(ss>=7?'🥇':'🥈')+'</div><p style="text-align:center;font-size:19px">'+t('got')+ss+t('of')+sl.length+'<br>'+t('pt')+q+'</p><p style="text-align:center"><button class="btn" onclick="sort()">'+t('again')+'</button></p>');return}
+  var x=sl[si];
+  show('<h2>🧊 '+t('srt')+'</h2><div class="prog">'+(si+1)+t('of')+sl.length+'</div><div class="big">'+x[0]+'</div><p style="text-align:center;font-size:19px;margin:0">'+p(x[1])+'</p><div class="row3" style="margin-top:12px"><button class="opt" onclick="sA(this,\'s\')">'+t('s1')+'</button><button class="opt" onclick="sA(this,\'l\')">'+t('s2')+'</button><button class="opt" onclick="sA(this,\'g\')">'+t('s3')+'</button></div>');
+}
+function sA(b,v){var ok=v===sl[si][2];document.querySelectorAll('.opt').forEach(function(o){o.disabled=true});b.classList.add(ok?'ok':'no');if(ok)ss++;setTimeout(function(){si++;sS()},850)}
+
+/* Virtual lab */
+var sel=[],res=null;
+function lab(){sel=[];res=null;lD()}
+function pk(id){var i=sel.indexOf(id);if(i>-1)sel.splice(i,1);else if(sel.length<2)sel.push(id);res=null;lD()}
+function mixIt(){var k=sel.slice().sort().join('+'),r=RX[k]||['n',t('none'),t('none')];res=r;
+  if(!seen[k]&&RX[k]){seen[k]=1;addP(5);res=r.concat([1]);build()}lD(true)}
+function sbOf(id){return SB.filter(function(s){return s[0]===id})[0]}
+function lD(mixed){
+  var h='<h2>⚗️ '+t('lab')+'</h2><div class="prog">'+(res?'':t('hint'))+'</div><div class="labw"><div class="sub">'+
+   SB.map(function(s){return '<button class="sb'+(sel.indexOf(s[0])>-1?' on':'')+'" onclick="pk(\''+s[0]+'\')"><span>'+s[1]+'</span>'+p(s[2])+'</button>'}).join('')+'</div><div style="flex:0 0 150px">';
+  var liq='',bub='';
+  if(mixed&&res){var a=sbOf(sel[0]),b=sbOf(sel[1]);
+    if(res[0]==='l'){var o=(sel.indexOf('oil')>-1)?sbOf('oil'):a,u=(o===a)?b:a;liq='<div class="lq" style="height:45%;background:'+u[3]+'"></div><div class="lq" style="height:25%;bottom:45%;background:'+o[3]+'"></div>'}
+    else{liq='<div class="lq" style="height:'+(res[0]==='r'?'65':'55')+'%;background:'+(res[0]==='r'?'#d8efc8':sbOf(sel.indexOf('wat')>-1?'wat':sel[0])[3])+'"></div>'}
+    if(res[0]==='r')for(var i=0;i<9;i++)bub+='<span class="bb" style="left:'+(10+i*12)+'px;animation-delay:'+(i*.18)+'s"></span>';
+  }else if(sel.length){liq='<div class="lq" style="height:30%;background:'+sbOf(sel[0])[3]+'"></div>'}
+  h+='<div class="bk">'+liq+bub+'</div><div style="text-align:center;margin-top:10px"><button class="btn" '+(sel.length<2?'disabled':'')+' onclick="mixIt()">'+t('mix')+'</button> <button class="btn bl" onclick="lab()">'+t('rst')+'</button></div></div></div>';
+  if(mixed&&res)h+='<div class="bx" style="margin-top:14px">'+(lang==='ar'?res[1]:res[2])+(res[3]?'<br><b style="color:#2a8a3a">'+t('newc')+'</b>':'')+'</div>';
+  show(h);
+}
+build();
+</script>
+</body>
+</html>
